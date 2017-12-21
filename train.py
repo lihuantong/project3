@@ -18,7 +18,7 @@ from sklearn.cross_validation import train_test_split
 from sklearn.tree import DecisionTreeClassifier
 x=pickle.load(open('datasets.pkl','rb'))
 y=np.ones(1000)
-y[500:999]=0
+y[500:999]=-1
 x_train, x_test, y_train, y_test = train_test_split(x,y,test_size=0.33,random_state=0)
 DTclf = DecisionTreeClassifier(max_depth=4)
 ADBTclf=ensemble.AdaBoostClassifier(DTclf,20).fit(x_train,y_train)
